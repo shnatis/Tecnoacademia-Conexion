@@ -1,0 +1,539 @@
+/* =========================
+   VARIABLES Y ESTILOS BASE
+   ========================= */
+:root {
+  --dark-bg: #200934;
+  --accent: #5ce1e6;
+  --light-bg: #f5f5f5;
+  --text-light: #ffffff;
+  --text-dark: #200934;
+  --sena-green: #3aa90a;
+}
+
+/* Modo oscuro por defecto */
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-mode {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sena-logo {
+  height: 50px;
+  filter: none;
+}
+
+body.light-mode .sena-logo {
+  filter: none;
+}
+
+.sena-logo + h2 {
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.btn-login {
+  background: var(--sena-green);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background: #2e8a08;
+}
+
+/* Secciones generales */
+.section {
+  padding: 4rem 5%;
+  margin: 2rem 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.4s ease;
+}
+
+body.light-mode .section {
+  background: #fff;
+}
+
+/* Contenedor central */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+.title {
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* Tarjetas de líneas y facilitadoras */
+.cards, .facilitadoras-list {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card, .facilitadora-card {
+  background: rgba(92, 225, 230, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  width: 200px;
+  transition: background 0.3s, transform 0.3s;
+  user-select: none;
+}
+
+.card:hover, .facilitadora-card:hover {
+  background: rgba(92, 225, 230, 0.2);
+  transform: translateY(-5px);
+}
+
+.facilitadora-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: rgba(0,0,0,0.2);
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card, .facilitadora-card {
+    width: 100%;
+  }
+}
+
+.btn-theme {
+  background: var(--accent);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+.btn-theme:hover {
+  background: #49c4c8;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* QUIENES SOMOS */
+.quienes-somos-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.quienes-texto {
+  flex: 1 1 400px;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.quienes-texto p {
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.quienes-imagen {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.quienes-imagen img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.quienes-imagen img:hover {
+  transform: scale(1.05);
+}
+
+/* Ajustes para modo claro */
+body.light-mode .quienes-texto {
+  color: var(--text-dark);
+}
+
+body.light-mode .quienes-imagen img {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quienes-somos-container {
+    flex-direction: column;
+  }
+
+  .quienes-texto, .quienes-imagen {
+    flex: 1 1 100%;
+  }
+}
+
+/* Formulario de contacto */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--sena-green);
+  box-shadow: 0 0 8px var(--sena-green);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Ajustes para modo claro */
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+  background: #fff;
+  border: 2px solid #ddd;
+  color: var(--text-dark);
+  box-shadow: none;
+}
+
+body.light-mode .contact-form input::placeholder,
+body.light-mode .contact-form textarea::placeholder {
+  color: #999;
+}
+
+body.light-mode .contact-form input:focus,
+body.light-mode .contact-form textarea:focus {
+  border-color: var(--sena-green);
+  box-shadow: 0 0 8px var(--sena-green);
+  background: #fff;
+}
+
+.contact-form button {
+  background: var(--sena-green);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 5px 15px rgba(58, 169, 10, 0.6);
+}
+
+.contact-form button:hover {
+  background: #2e8a08;
+}
+
+/* Mensaje de éxito */
+.success-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent);
+  background-color: rgba(92, 225, 230, 0.15);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px var(--accent);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* =========================
+   LOGIN MODAL (específico)
+   ========================= */
+#login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+}
+
+#login-modal .modal-content {
+  background: var(--dark-bg);
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  max-width: 420px;
+  width: 90%;
+  color: var(--text-light);
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  font-family: inherit;
+  transition: background 0.4s ease;
+}
+
+body.light-mode #login-modal .modal-content {
+  background: #fff;
+  color: var(--text-dark);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   CALENDAR MODAL (específico)
+   ========================= */
+#calendarModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#calendarModal .modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Botón de cerrar (común para ambos modales) */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--accent);
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: var(--sena-green);
+}
+
+/* =========================
+   LOGIN FORM Y MENSAJES
+   ========================= */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.login-form input {
+  padding: 0.9rem 1rem;
+  border: 1.8px solid var(--accent);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .login-form input {
+  background: #fff;
+  border: 1.8px solid #ddd;
+  color: var(--text-dark);
+}
+
+body.light-mode .login-form input::placeholder {
+  color: #999;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--sena-green);
+  box-shadow: 0 0 8px var(--sena-green);
+}
+
+.login-form button {
+  background: var(--sena-green);
+  color: white;
+  border: none;
+  padding: 1.1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 10px rgba(58, 169, 10, 0.6);
+}
+
+.login-form button:hover {
+  background: #2e8a08;
+}
+
+/* Mensaje de login contenido modal */
+.login-message {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--text-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 8px var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.login-message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.login-message { color: #fff; } /* texto blanco*/
+
+
+
+/* Modo oscuro modal calen */
+#calendarModal .modal-content {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+/*claro */
+body.light-mode #calendarModal .modal-content {
+  background: #fff;
+  color: var(--text-dark);
+}

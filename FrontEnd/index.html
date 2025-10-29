@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tecnoacademia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="img/logo-nuevo.png" class="sena-logo" />
+      <h2>TecnoAcademia SENA</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#lineas">Líneas</a></li>
+        <li><a href="#facilitadoras">Facilitadoras</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#" class="btn-login">Iniciar sesión</a></li>
+        <li><button id="theme-toggle" class="btn-theme">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección Home -->
+  <section id="home" class="section home">
+    <div class="container">
+      <h1 class="title">Bienvenidos a la Tecnoacademia</h1>
+      <p class="subtitle">Innovación, tecnología y formación para el futuro.</p>
+    </div>
+  </section>
+
+  <!-- Modal Login -->
+  <div id="login-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form class="login-form" id="login-form">
+        <input type="email" id="email" name="email" placeholder="Correo electrónico" required />
+        <input type="password" id="password" name="password" placeholder="Contraseña" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="login-message"></p>
+    </div>
+  </div>
+
+  <!-- Sección Quiénes Somos -->
+  <section id="quienes-somos" class="section quienes-somos">
+    <div class="container quienes-somos-container">
+      <div class="quienes-texto">
+        <h2 class="title">¿Quiénes Somos?</h2>
+        <p>
+          La Tecnoacademia SENA es un espacio de innovación y formación tecnológica que busca potenciar las habilidades...
+        </p>
+        <p>Contamos con un equipo de facilitadores expertos y un ambiente propicio para el aprendizaje práctico y colaborativo.</p>
+      </div>
+      <div class="quienes-imagen">
+        <img src="img/presentacion.png" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Líneas Tecnológicas -->
+  <section id="lineas" class="section lineas">
+    <div class="container">
+      <h1 class="title">Nuestras Líneas Tecnológicas</h1>
+      <div class="cards">
+        <div class="card" data-linea="materiales">Materiales y Biotecnología</div>
+        <div class="card" data-linea="tics">TIC's e Inteligencia Artificial</div>
+        <div class="card" data-linea="diseno">Diseño y Producto</div>
+        <div class="card" data-linea="produccion">Producción y Transformación</div>
+      </div>
+      <div id="detalle-linea" class="detalle-linea" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="section gallery">
+    <div class="container">
+      <h2 class="title">Galería de Proyectos</h2>
+      <div class="gallery-grid">
+        <img src="img/proyecto tics.png" alt="Proyecto 1" />
+        <img src="img/proyecto bio.png" alt="Proyecto 2" />
+        <img src="img/proyecto diseño.png" alt="Proyecto 3" />
+        <img src="img/proyecto produccion.png" alt="Proyecto 4" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Facilitadoras -->
+  <section id="facilitadoras" class="section facilitadoras">
+    <div class="container">
+      <h1 class="title">Nuestras Facilitadoras</h1>
+      <div class="facilitadoras-list">
+        <div class="facilitadora-card" data-id="jennifer">
+          <img src="img/facilitadorajenni.png" alt="Jennifer Andrea Ruiz Duran" />
+          <h4>Jennifer Andrea Ruiz Duran</h4>
+          <h4>Materiales y Biotecnología</h4>
+        </div>
+        <div class="facilitadora-card" data-id="ayxa">
+          <img src="img/fotonataly.png" alt="Ayxa Nataly Caicedo Rosero" />
+          <h4>Ayxa Nataly Caicedo Rosero</h4>
+          <h4>Tic's e Inteligencia Artificial</h4>
+        </div>
+        <div class="facilitadora-card" data-id="martha">
+          <img src="img/fotomartha.png" alt="Martha Lucia Carrero" />
+          <h4>Martha Lucia Carrero</h4>
+          <h4>Diseño y Producto</h4>
+        </div>
+        <div class="facilitadora-card" data-id="maria">
+          <img src="img/fotomaria.png" alt="Maria Alejandra Granja Ardila" />
+          <h4>Maria Alejandra Granja Ardila</h4>
+          <h4>Producción y Transformación</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="section contacto">
+    <div class="container">
+      <h2 class="title">Contáctanos</h2>
+      <p>¿Tienes dudas o quieres inscribirte? Escríbenos:</p>
+      <form class="contact-form" id="contact-form">
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo" required />
+        <textarea placeholder="Mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p class="success-message">Gracias por tu mensaje. Nos pondremos en contacto pronto.</p>
+    </div>
+  </section>
+
+  <!-- Modal Calendarios (lo colocamos al final por limpieza) -->
+  <div id="calendarModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="calendarTitle"></h2>
+      <div id="calendarContainer"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Tecnoacademia SENA - Tecnoparque. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

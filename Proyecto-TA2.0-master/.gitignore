@@ -1,0 +1,59 @@
+# Ignorar entornos de Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Ignorar entornos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Archivos de configuración sensibles
+*.env
+*.env.local
+.env.*.local
+
+# Archivos de compilación y distribución
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales del editor
+.vscode/
+.idea/
+
+# Archivos de cobertura
+.coverage
+coverage/
+htmlcov/
+
+# Archivos de logs
+*.log
+
+# Ignorar backups y temporales
+*.bak
+*.swp
+*.swo
+
+git rm -r --cached node_modules
+git rm -r --cached FrontEnd/node_modules
+git rm -r --cached BackEnd/node_modules
+git commit -m "Remove node_modules and apply gitignore"
